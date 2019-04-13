@@ -1,0 +1,16 @@
+- name: Create mairadb directory
+  file: path="{{ VAR_MARIADB_DIR }}" recurse=yes state=directory owner=999 group=999
+
+- name: Start mariadb container
+  docker_container:
+    name: mariadb
+    image: mariadb:latest
+    pull: yes
+    state: started
+    env:
+      MYSQL_ROOT_PASSWORD: "{{ VAR_MARIADB_PASSWORD }}"
+    ports:
+      - 3306:3306
+    volumes:
+      - "{{ VAR_MARIADB_DIR }}:/var/lib/mysql:Z"
+    restart_policy: no

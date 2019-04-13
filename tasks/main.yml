@@ -1,0 +1,4 @@
+---
+# tasks file for container-mariadb
+- import_tasks: mariadb.yml
+  become: true

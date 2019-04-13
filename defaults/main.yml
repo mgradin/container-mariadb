@@ -1,0 +1,4 @@
+---
+# defaults file for container-mariadb
+VAR_MARIADB_DIR: /opt/mariadb
+VAR_MARIADB_PASSWORD: mariadbpasswd 
