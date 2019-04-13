@@ -13,4 +13,4 @@
       - 3306:3306
     volumes:
       - "{{ VAR_MARIADB_DIR }}:/var/lib/mysql:Z"
-    restart_policy: no
+    restart_policy: unless-stopped
